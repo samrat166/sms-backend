@@ -14,10 +14,8 @@ const createTeacher = async (req, res) => {
     if (response) {
       const createdUser = await User.create({
         name: req.body.name,
-        email: `${getSpecificCharsFromName(
-          req.body.name
-        )}${getSpecificCharsFromUUID(uuidv4())}@teacher.com`,
-        password: createUserPassword(uuidv4()),
+        username: req.body.phone,
+        password: req.body.phone,
         role: TEACHER_ROLE,
       });
       res.json({ success: true, message: response, extra: createdUser });

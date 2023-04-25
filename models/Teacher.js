@@ -8,7 +8,7 @@ const teacherSchema = new Schema(
       trim: true,
     },
     address: String,
-    phone: Number,
+    phone: String,
   },
   { timestamps: true }
 );
